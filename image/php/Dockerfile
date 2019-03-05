@@ -7,6 +7,9 @@ RUN apt-get update && apt-get upgrade -y \
     openssl \
     git \
     unzip \
+    &&  apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev && \
+           docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+           docker-php-ext-install gd \
     && docker-php-ext-install \
         bcmath \
     && docker-php-ext-install pdo pdo_mysql\
@@ -18,3 +21,4 @@ RUN apt-get update && apt-get upgrade -y \
     && apt-get clean \
 
 WORKDIR /var/www/html
+

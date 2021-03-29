@@ -21,8 +21,6 @@ RUN apt-get update \
     php7.4-xsl \
     php7.4-zip \
     php-imagick \
-    php-redis \
-    php-xdebug \
     && php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer \
     && echo \
     && apt-get autoremove -y --purge \

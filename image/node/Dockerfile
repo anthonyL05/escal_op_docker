@@ -14,3 +14,4 @@ RUN npm i npm@latest -g
 EXPOSE 4200
 
 CMD ["npm", "start"]
+
